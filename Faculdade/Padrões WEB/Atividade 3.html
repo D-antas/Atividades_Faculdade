@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>O Objeto Elemento</h1>
+<h2>O Método appendChild() </h2>
+
+<ul id="myList">
+  <li>Café</li>
+  <li>Chá</li>
+</ul>
+
+<p>Clique em "Adicionar" para adicionar um item no final da lista:</p>
+
+<input type="text" id="itemText">
+<br>
+
+<p>Escolha uma cor:</p>
+<input type="radio" name="cores" value="red"> Vermelho<br>
+<input type="radio" name="cores" value="blue"> Azul<br>
+<input type="radio" name="cores" value="green"> Verde<br>
+<input type="radio" name="cores" value="black"> Preto<br>
+<input type="radio" name="cores" value="pink"> Rosa<br>
+
+
+<button id="appendButton">Adicionar</button>
+
+<script>
+document.getElementById("appendButton").addEventListener("click", function() {
+  // Get the item text from the input:
+  const itemText = document.getElementById("itemText").value;
+
+  // Get the selected color:
+  const selectedColor = document.querySelector('input[name="cores"]:checked').value;
+
+  // Create an "li" node:
+  const node = document.createElement("li");
+
+  // Set the color style for the node:
+  node.style.color = selectedColor;
+
+  // Create a text node with the item text:
+  const textnode = document.createTextNode(itemText);
+
+  // Append the text node to the "li" node:
+  node.appendChild(textnode);
+
+  // Append the "li" node to the list:
+  document.getElementById("myList").appendChild(node);
+});
+</script>
+
+</body>
+</html>

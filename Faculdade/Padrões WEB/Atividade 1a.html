@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercício 1a</title>
+    <style>
+
+        body{
+            position: fixed;
+
+            top: 350px;
+            left:0px;
+            right:0px;
+            bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <center><h1 id="cab1">Calcular Média</h1>
+    <label for="nota1">Informe a nota do 1° Bimestre:</label>
+    <input type="number" id="nota1">
+    <br>
+    <label for="nota2">Informe a nota do 2° Bimestre:</label>
+    <input type="number" id="nota2">
+    <br>
+    <button onclick="calcularMedia()">Calcular Média</button></center>
+<script>
+    function calcularMedia() {
+        var nota1Input = document.getElementById('nota1');
+        var nota2Input = document.getElementById('nota2');
+
+        var nota1 = parseFloat(nota1Input.value);
+        var nota2 = parseFloat(nota2Input.value);
+
+        var media = (nota1 + nota2) / 2;
+        var situacao, color;
+
+        if (media >= 6) {
+            situacao = "Aprovado";
+            color = "blue";
+        } else {
+            situacao = "Reprovado";
+            color = "red";
+        }
+
+        var mensagem = "Sua média é " + media + ". Você está: " + situacao;
+        document.getElementById("cab1").innerHTML = mensagem;
+        document.getElementById("cab1").style.color = color;
+    }
+</script>   
+</body>
+</html>

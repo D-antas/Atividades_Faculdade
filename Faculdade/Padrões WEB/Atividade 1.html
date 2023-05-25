@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Exercício 1</title>
+    <style>
+        #cab1 { 
+            position : fixed;
+
+            top: 350px;
+            left:0px;
+            right:0px;
+            bottom: 0px;
+
+        }
+    </style>
+</head>
+<body>
+    <center><h1 id="cab1">Exemplo</h1></center>
+        <script>
+
+            var nota1 = prompt('Informe a nota do 1° Bimestre')
+            var nota2 = prompt('Informe a nota do 2° Bimestre')
+
+            nota1 = parseFloat(nota1);
+            nota2 = parseFloat(nota2);
+
+            var media = (nota1 + nota2) / 2;
+            var situacao, color;
+
+            if (media >= 6) {
+            situacao = "Aprovado";
+            color = "blue";
+            } else {
+            situacao = "Reprovado";
+            color = "red";
+            }   
+           
+
+            var mensagem = "Sua média é " + media + ". Você está: " + situacao;
+
+            document.getElementById("cab1").innerHTML = mensagem;
+            document.getElementById("cab1").style.color = color;
+
+            if (media >> 10) {
+                var mesagem = "ERRO, Talvez você tenha digitado errado!!!"
+                document.getElementById("cab1").innerHTML = mensagem
+            }
+
+    </script>   
+</body>
+</html>

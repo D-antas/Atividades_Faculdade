@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercício 1a</title>
+    <style>
+        body {
+            position: fixed;
+            top: 350px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1 id="cab1">Seu IMC</h1>
+        <label for="peso">Informe o seu peso: (Ex.: 140)</label>
+        <input type="number" id="peso">
+        <br>
+        <label for="altura">Informe a sua altura: (Ex.: 1,75)</label>
+        <input type="number" id="altura">
+        <br>
+        <button onclick="calcularIMC()">Calcular IMC</button>
+    </center>
+
+    <script>
+        function calcularIMC() {
+            var pesoInput = document.getElementById('peso');
+            var alturaInput = document.getElementById('altura');
+
+            var peso = parseFloat(pesoInput.value);
+            var altura = parseFloat(alturaInput.value);
+
+            var imc = peso / (altura ** 2);
+            var situacao, color;
+
+            if (imc < 17) {
+                situacao = "Peso Muito Abaixo do Ideal";
+                color = "red";
+            } else if (imc >= 17 && imc <= 18.49) {
+                situacao = "Abaixo do Peso";
+                color = "orange";
+            } else if (imc >= 18.50 && imc <= 24.99) {
+                situacao = "Peso Normal";
+                color = "green";
+            } else if (imc >= 25 && imc <= 29.99) {
+                situacao = "Acima do Peso";
+                color = "orange";
+            } else if (imc >= 30 && imc <= 34.99) {
+                situacao = "Obesidade I";
+                color = "red";
+            } else if (imc >= 35 && imc <= 39.99) {
+                situacao = "Obesidade II";
+                color = "red";
+            } else if (imc >= 40) {
+                situacao = "Obesidade III";
+                color = "red";
+            }
+
+            var mensagem = "Seu IMC é: " + imc.toFixed(2) + ". Você está com: " + situacao;
+            document.getElementById("cab1").innerHTML = mensagem;
+            document.getElementById("cab1").style.color = color;
+        }
+    </script>
+</body>
+</html>
