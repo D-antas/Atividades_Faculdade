@@ -1,3 +1,3 @@
 # Atividades_Faculdade
 
-Atividades Realizadas no Periodo de estudo na Faculdade
+Atividades JavaScript Feita por Christopher Dantas
